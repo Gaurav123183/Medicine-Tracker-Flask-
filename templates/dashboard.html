@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container dashboard">
+<h2>Hello, {{ name }}</h2>
+<a href="/logout">Logout</a> | <a href="/add">➕ Add Medicine</a>
+<hr>
+
+{% if meds %}
+{% for m in meds %}
+<div class="medicine-card">
+<b>{{ m.med_name }}</b> ({{ m.dosage }})<br>
+Frequency: {{ m.frequency }}<br>
+{{ m.start_date }} → {{ m.end_date }}<br>
+Notes: {{ m.notes }}<br>
+
+<a href="/update/{{ m.med_id }}">✏ Edit</a> |
+<a href="/delete/{{ m.med_id }}">🗑 Delete</a>
+</div>
+{% endfor %}
+{% else %}
+<p>No medicines added yet</p>
+{% endif %}
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Update Medicine</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h2>✏ Update Medicine</h2>
+
+<form method="POST">
+<input name="med_name" value="{{ med.med_name }}" required>
+<input name="dosage" value="{{ med.dosage }}" required>
+<input name="frequency" value="{{ med.frequency }}" required>
+<input type="date" name="start_date" value="{{ med.start_date }}" required>
+<input type="date" name="end_date" value="{{ med.end_date }}">
+<textarea name="notes">{{ med.notes }}</textarea>
+<button>Update</button>
+</form>
+
+<a href="/dashboard">⬅ Back</a>
+</div>
+</body>
+</html>

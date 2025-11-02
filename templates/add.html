@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Medicine</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h2>➕ Add Medicine</h2>
+
+<form method="POST">
+<input required name="med_name" placeholder="Medicine Name">
+<input required name="dosage" placeholder="500mg">
+<select name="frequency">
+<option>Once a day</option>
+<option>Twice a day</option>
+<option>Every 6 hours</option>
+</select>
+<input type="date" name="start_date" required>
+<input type="date" name="end_date">
+<textarea name="notes"></textarea>
+<button>Save</button>
+</form>
+
+<a href="/dashboard">⬅ Back</a>
+</div>
+</body>
+</html>
